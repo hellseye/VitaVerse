@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "local_1781930226103",
+    "name": "Alice Smith",
+    "email": "alice@example.com",
+    "feedback": "Amazing luxury product!",
+    "rating": 5,
+    "submittedAt": "2026-06-20T04:37:06.103Z"
+  },
+  {
+    "_id": "local_1782014052947",
+    "name": "Mayank Dhanuka",
+    "email": "mayankdhanuka899@gmail.com",
+    "feedback": "i like it",
+    "rating": 5,
+    "submittedAt": "2026-06-21T03:54:12.947Z"
+  }
+]

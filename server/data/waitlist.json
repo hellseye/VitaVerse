@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "local_1781930214649",
+    "fullName": "John Doe",
+    "email": "john@example.com",
+    "phone": "1234567890",
+    "city": "San Francisco",
+    "submittedAt": "2026-06-20T04:36:54.649Z"
+  },
+  {
+    "_id": "local_1782014101680",
+    "fullName": "Mayank Dhanuka",
+    "email": "mayankdhanuka899@gmail.com",
+    "phone": "06354263023",
+    "city": "surat",
+    "submittedAt": "2026-06-21T03:55:01.680Z"
+  }
+]
