@@ -33,20 +33,32 @@ app.use(
 );
 
 // CORS config
-const clientUrl = process.env.CLIENT_URL || 'http://localhost:8080';
+const clientUrl = process.env.CLIENT_URL ? process.env.CLIENT_URL.replace(/\/$/, '') : 'http://localhost:8080';
 const allowedOrigins = [
   clientUrl,
   'http://localhost:8080',
-  'http://localhost:4000'
+  'http://localhost:4000',
+  'https://vita-verse-beta.vercel.app'
 ];
 
 app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin) return callback(null, true);
-      if (allowedOrigins.indexOf(origin) !== -1 || origin.startsWith('http://localhost:') || origin.startsWith('file://')) {
+      
+      // Normalize origin by removing trailing slash if any
+      const normalizedOrigin = origin.replace(/\/$/, '');
+      
+      // Allow if it matches allowedOrigins, ends with vercel.app, or is local development
+      if (
+        allowedOrigins.includes(normalizedOrigin) || 
+        normalizedOrigin.startsWith('http://localhost:') || 
+        normalizedOrigin.startsWith('file://') ||
+        normalizedOrigin.endsWith('.vercel.app')
+      ) {
         return callback(null, true);
       }
+      
       return callback(new Error('The CORS policy for this site does not allow access from the specified Origin.'), false);
     },
     credentials: true
